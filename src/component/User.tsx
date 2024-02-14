@@ -14,11 +14,11 @@ function User() {
     {
       field: 'Description',
       headerName: 'Description',
-      width: 140,
+      width: 200,
       sortable: false,
     },
     { field: 'Cors', headerName: 'Cors', width: 80, sortable: false },
-    { field: 'Link', headerName: 'Link', width: 70, sortable: false },
+    { field: 'Link',headerName: 'Links', sortable: false,renderCell:((params)=><a href={params.value} target='_blank'>Link</a>) },
   ];
   return (
     <>
