@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
+import { Box } from '@mui/material';
 
 function User() {
   const [data, setData] = useState([]);
@@ -18,11 +19,11 @@ function User() {
       sortable: false,
     },
     { field: 'Cors', headerName: 'Cors', width: 80, sortable: false },
-    { field: 'Link',headerName: 'Links', sortable: false,renderCell:((params)=><a href={params.value} target='_blank'>Link</a>) },
+    { field: 'Link', headerName: 'Links', sortable: false, renderCell: ((params) => <a href={params.value} target='_blank'>Link</a>) },
   ];
   return (
-    <>
-      <div style={{ height: '90vh', width: '100%' }}>
+    <Box flex={6} p={2}>
+      <div style={{ height: '110vh', width: '100%' }}>
         {
           <DataGrid
             rows={data}
@@ -36,7 +37,7 @@ function User() {
           />
         }
       </div>
-    </>
+    </Box>
   );
 }
 
